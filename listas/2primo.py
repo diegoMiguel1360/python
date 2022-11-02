@@ -6,7 +6,6 @@ import random
 lista = []
 suma = 0
 
-
 for i in range (random.randint(10,25)):
     lista.insert(0,int(random.random()*100))
 

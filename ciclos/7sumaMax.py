@@ -4,3 +4,11 @@ exceda de una cantidad (máximo) introducida por el teclado.
 Es decir cuantos números de la serie de los naturales debo
 sumar para superar el dato máximo."""
 
+n = int(input("Ingrese un nro: "))
+cont = 0
+suma = 0
+for i in range (n):
+    suma += i
+    if suma <= n:
+        cont += 1
+print (cont)

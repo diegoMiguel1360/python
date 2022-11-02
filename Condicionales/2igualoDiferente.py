@@ -1,5 +1,5 @@
-#Escribe un programa que pida tres números y que escriba si
-#son los tres iguales, si hay dos iguales o si son los tres distintos
+# Escribe un programa que pida tres números y que escriba si
+# son los tres iguales, si hay dos iguales o si son los tres distintos
 
 a = int(input("a = "))
 b = int(input("b = "))
