@@ -3,12 +3,12 @@ aleatorios. Encuentre la suma y el promedio de los números de la lista"""
 
 import random
 
-lista = []
+lista = [int(random.random()*100) for i in range (random.randint(10,25))]
 suma = 0
 cont = 0
 
-for i in range (random.randint(10,25)):
-    lista.insert(0,int(random.random()*100))
+#for i in range (random.randint(10,25)):
+    #lista.insert(0,int(random.random()*100))
 print (lista)
 
 for i in lista:

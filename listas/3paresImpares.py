@@ -3,10 +3,10 @@ aleatorios. Sume los pares y saque el promedio de los impares"""
 
 import random
 
-lista = []
+lista = [int(random.random()*100) for i in range (random.randint(10,25)) ]
 
-for i in range (random.randint(10,25)):
-    lista.insert(0,int(random.random()*100))
+#for i in range (random.randint(10,25)):
+    #lista.insert(0,int(random.random()*100))
 print (lista)
 
 suma1 = 0

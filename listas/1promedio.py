@@ -4,15 +4,12 @@ del promedio o es igual al promedio de todos los números de la lista."""
 
 import random
 
-lista = []
 suma = 0
-cont = 0
-
-for i in range (random.randint(10,25)):
-    lista.append(int(random.random()*100))
-    suma += lista[i]
-    cont += 1
-prom = round(suma/cont,2)
+lista = [int(random.random()*100) for i in range (random.randint(10,25))]
+#for i in range (random.randint(10,25)):
+    #lista.append(int(random.random()*100))
+suma += lista
+prom = round(suma/len(lista),2)
 
 print("El promedio es: ",prom)
 for i in lista:

@@ -3,10 +3,10 @@ aleatorios. Encuentre la mediana de los números de la lista"""
 
 import random
 
-lista = []
+lista = [int(random.random()*100) for i in range (random.randint(10,25))]
 
-for i in range (random.randint(10,25)):
-    lista.insert(0,int(random.random()*100))
+#for i in range (random.randint(10,25)):
+    #lista.insert(0,int(random.random()*100))
 
 for i in range (len(lista)):
     for j in range (i+1,len(lista)):

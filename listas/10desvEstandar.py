@@ -14,7 +14,6 @@ print(lista)
 
 desv = 0
 for i in lista:
-
     dis = (i - prom)**2
     desv += dis
 desv = desv/len(lista)
