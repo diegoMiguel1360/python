@@ -9,10 +9,10 @@ suma = 0
 cont = 0
 
 for i in range (random.randint(10,25)):
-    lista.insert(0,int(random.random()*100))
+    lista.append(int(random.random()*100))
     suma += lista[i]
     cont += 1
-prom = suma/cont
+prom = round(suma/cont,2)
 
 print("El promedio es: ",prom)
 for i in lista:

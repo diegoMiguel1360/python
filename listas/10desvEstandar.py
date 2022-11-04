@@ -5,21 +5,19 @@ import random
 
 lista = []
 suma = 0
-cont = 0
 
 for i in range (random.randint(10,25)):
-    lista.insert(0,int(random.random()*100))
+    lista.append(int(random.random()*100))
     suma += lista[i]
-    cont += 1
-prom = int(suma/cont)
+prom = round(suma/len(lista),2)
 print(lista)
 print(prom)
 
 desv = 0
 for i in lista:
-    if i >= prom:
-        dis = i - prom
-    else:
-        dis = prom - i
-    dis = dis**2
+    dis = (i - prom)**2
     desv += dis
+desv = desv/len(lista)
+desv = round(desv ** 0.5,2)
+
+print(desv)
