@@ -11,13 +11,16 @@ for i in range (random.randint(10,25)):
     suma += lista[i]
 prom = round(suma/len(lista),2)
 print(lista)
-print(prom)
 
 desv = 0
 for i in lista:
+
     dis = (i - prom)**2
     desv += dis
 desv = desv/len(lista)
 desv = round(desv ** 0.5,2)
 
 print(desv)
+
+
+
