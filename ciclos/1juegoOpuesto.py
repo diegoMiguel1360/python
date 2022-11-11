@@ -8,6 +8,7 @@ cont = 0
 while i != 0:
 	i = int(input("Escriba un nro "))
 	if i != 0:
-	    print(i,"opueso",-(i))
-	    cont += 1
+		print(i,"opueso",-(i))
+		cont += 1
+	    
 print(cont)

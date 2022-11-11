@@ -4,5 +4,5 @@ def entero(n):
     elif n<0:
         print(n,"Es negativo")
     else: print("Es cero")
-    
+
 entero(0)

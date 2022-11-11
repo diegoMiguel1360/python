@@ -15,7 +15,6 @@ print(perfecto(6))
 
 def amigos(a,b):
     sum = sumaDivisores()
-    
 
 def primo(n):
     cont = sumaDivisores(n)

@@ -8,6 +8,7 @@ def orden (x,y):
     else:
         return "iguales"
 
+
 for i in range (10):
     x = round(random.randrange(10))
     y = round(random.randrange(10))
