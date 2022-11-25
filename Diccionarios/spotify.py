@@ -1,7 +1,11 @@
 #Diseñar una lista de spotify
-mi_musica = {'un artista':{'una cancion':('rock',3,45),
+mi_musica = {'un artista':{'1 cancion':('rock',3,45),
+                        'patos':('rap',4,18),
                         'otra cancion':('salsa',3,27)},
-            'otro artista':{}}
+            'otro artista':{'una cancion':('trap',4,54),
+                        'cancion 2':('rap',5,32),
+                        'ana':('rock',4,18)}
+            }
 
 
 #Anexar canciones (genero, duracion) 1
@@ -18,13 +22,10 @@ def nueva_cancion(cancion,artista,genero,min,seg):
 #Anexar artista 0
 def nuevo_artista(artista):
     if artista in mi_musica:
-        print ("---Este artista ya existe---")
+        input ("---Este artista ya existe---")
     else:
         mi_musica[artista]={}
-        print ('---Artista agregado correctamente---')
-        tema = input('---Para agregar canciones digita "S"---')
-        if tema == 'S' or 's':
-            menu(1)
+        input('---Artista agregado correctamente---')
 
 #Buscar artista 2
 def buscar_artista(artista):
@@ -38,15 +39,12 @@ def buscar_artista(artista):
 #Buscar cancion 3
 def buscar_cancion(cancion):
     for h,i in mi_musica.items():
-        for j,k in i.items():
-            if cancion not in j:
-                input('---La cancion no existe---')
-            elif j == cancion:
-                print(h,j,k[0],sep='//',end='//')
-                print(k[1],k[2],sep=':')
-                input('---Enter para continuar---')
-            else:
-                input('---La cancion no existe---')
+        if cancion in i:
+            print(h,cancion,mi_musica[h][cancion][0],sep='//',end='//')
+            print(mi_musica[h][cancion][1],mi_musica[h][cancion][2],sep=':')
+            input('---Enter para continuar---')
+            ciclo()
+    input('---La cancion no existe---')
 
 #eliminar artista 4
 def eliminar_artista(artista):
@@ -58,45 +56,61 @@ def eliminar_artista(artista):
 
 #Ordenar alfabeticamente 5
 def ordenar():
+    orden = {}
     for h,i in mi_musica.items():
-        for j,k in sorted(i.items()):
-            print(j,h,k[0],sep='//',end='//')
-            print(k[1],k[2],sep=':')
+        for j,k in i.items():
+            orden[j]=h
+    for i,j in sorted(orden.items()):
+        print(i,j,sep='//')
     input('---Enter para continuar---')
-0
+
 #Artista que tiene mas canciones 6
 def mayor():
-    max = 0
+    cant = ()
+    print('Artista(s) favorito(s):')
+    for i in mi_musica.values():
+        cant += len(i),
+    may = max(cant)
     for i,j in mi_musica.items():
-        cant = len(j)
-        if cant > max:
-            max = cant
-            fav = i
-    print('tu artista favorita es:',fav)
+        if may == len(j):
+            print(i,'con',may,'canciones')
+    input('---Enter para continuar---')
             
 #Artista que tiene la cancion mas larga 7
 def larga():
-    for i,j in mi_musica.items():
-        largo = 0
-        for l,k in j.items():
-            tam = int(k[1]*60+k[2])
-            fav = tam
-            if tam > largo:
-                largo = tam
-                fav = l
-        print(fav)
+    lista = {}
+    for h,i in mi_musica.items():
+        for j,k in i.items():
+            tam = k[1]*60+k[2]
+            lista[(h,j)]=tam
+            largo = max(lista.values())
+    for h,i in lista.items():
+        if largo == i:
+            for j,k in mi_musica.items():
+                if j == h[0]:
+                    for l,m in k.items():
+                        if i == m[1]*60+m[2]:
+                            print(j,'tiene la cancion mas larga =',l,'con ',end='')
+                            print(m[1],m[2],sep=':')
+    input('---Enter para continuar---')
 
 #Artista que tiene la cancion mas corta 8
 def corta():
-    for i,j in mi_musica.items():
-        largo = 9999999
-        for l,k in j.items():
+    lista = {}
+    for h,i in mi_musica.items():
+        for j,k in i.items():
             tam = k[1]*60+k[2]
-            fav = tam
-            if tam < largo:
-                largo = tam
-                fav = l
-    print(fav)
+            lista[(h,j)]=tam
+            corto = min(lista.values())
+    for h,i in lista.items():
+        if corto == i:
+            for j,k in mi_musica.items():
+                if j == h[0]:
+                    for l,m in k.items():
+                        if i == m[1]*60+m[2]:
+                            print(j,'tiene la cancion mas corta =',l,'con ',end='')
+                            print(m[1],m[2],sep=':')
+    input('---Enter para continuar---')
 
 #Menu
 def menu(a):
@@ -137,12 +151,13 @@ def menu(a):
     if a == 8:
         corta()
 
-while True:
-    print('-----------------------------------','     Bienvenido','   ¿Que deseas hacer hoy?',sep='\n')
-    print('0 = Agregar nuevo artista','1 = Agregar nueva cancion','2 = Buscar artista','3 = Buscar cancion','4 = Eliminar un artista','5 = Ver tu lista de reproducción ordenada','6 = ¿Cual es mi artista favorito?','7 = ¿Cual es mi cancion mas larga?','8 = ¿Cual es mi cancion mas corta?','9 = SALIR',sep="\n")
-    a = int(input())
-    menu(a)
-    if a == 9:
-        break
-
-print(mi_musica)
+def ciclo():
+    while True:
+        print('-----------------------------------','     Bienvenido','   ¿Que deseas hacer hoy?',sep='\n')
+        print('0 = Agregar nuevo artista','1 = Agregar nueva cancion','2 = Buscar artista','3 = Buscar cancion','4 = Eliminar un artista','5 = Ver tu lista de reproducción ordenada','6 = ¿Cual es mi artista favorito?','7 = ¿Cual es mi cancion mas larga?','8 = ¿Cual es mi cancion mas corta?','9 = SALIR',sep="\n")
+        a = int(input())
+        menu(a)
+        if a == 9:
+            break
+ciclo()
+print('---DIOS NO EXISTE---')
