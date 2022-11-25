@@ -1,12 +1,11 @@
 #Diseñar una lista de spotify
-mi_musica = {'un artista':{'1 cancion':('rock',3,45),
-                        'patos':('rap',4,18),
-                        'otra cancion':('salsa',3,27)},
-            'otro artista':{'una cancion':('trap',4,54),
-                        'cancion 2':('rap',5,32),
-                        'ana':('rock',4,18)}
+mi_musica = {'foals':{'in deegres':('indie rock',3,45),
+                        'inhaler':('indie',4,18),
+                        'my number':('indie rock',3,27)},
+            'kasabian':{'club foot':('indie rock',4,54),
+                        'lsf':('indie',5,32),
+                        'fire':('rock',4,18)}
             }
-
 
 #Anexar canciones (genero, duracion) 1
 def nueva_cancion(cancion,artista,genero,min,seg):
