@@ -1,11 +1,9 @@
 #Escriba una clase Empleado que tenga como propiedades nombre, cargo, salario
 class Empleado:
-    cont = 0
     def __init__(self,nombre,cargo,salario):
         self.__nombre=nombre
         self.__cargo=cargo
         self.__salario=salario
-        self.cont+=1
 
 #escriba metodos contructores, setters y getters
     def getNombre(self):
@@ -25,9 +23,6 @@ class Empleado:
 
     def setSalario(self,salario):
         self.__salario=salario
-
-    def getCont(self):
-        return self.cont
 
 #escriba un método que permita calcular cuanto gana el empleado en una hora
     def xhora(self):
